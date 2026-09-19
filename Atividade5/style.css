@@ -6,19 +6,13 @@
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-
     background-color: #d2cab8;
-    background-image:
-        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(82, 76, 60, 0.08), transparent 35%);
-
     color: #292c24;
 
     display: flex;
     justify-content: center;
 
     min-height: 100vh;
-
     padding: 65px 20px 50px;
 }
 
@@ -27,11 +21,8 @@ body {
     max-width: 100%;
 }
 
-/* CABEÇALHO */
-
 .cabecalho {
     text-align: center;
-
     margin-bottom: 30px;
 }
 
@@ -54,7 +45,6 @@ h1 {
     font-weight: normal;
 
     letter-spacing: 3px;
-
     line-height: 1;
 }
 
@@ -67,14 +57,12 @@ h1 {
     font-style: italic;
 }
 
-/* ADICIONAR TAREFA */
-
 .adicionar-tarefa {
     display: flex;
-
     gap: 8px;
 
     padding: 7px;
+    margin-bottom: 24px;
 
     background-color: rgba(255, 253, 245, 0.7);
 
@@ -84,8 +72,6 @@ h1 {
     box-shadow:
         0 3px 8px rgba(48, 45, 36, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.7);
-
-    margin-bottom: 24px;
 }
 
 #tarefa {
@@ -101,7 +87,7 @@ h1 {
     color: #34372e;
 
     font-family: Arial, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
 
     outline: none;
 }
@@ -130,11 +116,8 @@ h1 {
 
 #adicionar:hover {
     background-color: #303629;
-
     transform: translateY(-1px);
 }
-
-/* FOLHA */
 
 .folha {
     position: relative;
@@ -177,8 +160,6 @@ h1 {
     background-color: rgba(211, 75, 75, 0.45);
 }
 
-/* LISTA */
-
 #lista-tarefas {
     margin: 0;
     padding: 0;
@@ -205,8 +186,6 @@ h1 {
     padding-left: 10px;
 }
 
-/* CHECKBOX */
-
 .check-tarefa {
     width: 16px;
     height: 16px;
@@ -217,8 +196,6 @@ h1 {
 
     accent-color: #3e4936;
 }
-
-/* TEXTO DA TAREFA */
 
 #lista-tarefas li span {
     flex: 1;
@@ -247,8 +224,6 @@ h1 {
 
     opacity: 0.6;
 }
-
-/* BOTÕES DAS TAREFAS */
 
 #lista-tarefas li button {
     padding: 5px 8px;
@@ -292,15 +267,12 @@ h1 {
 
 .botao-excluir {
     margin-left: 3px;
-
     color: #a54b45;
 }
 
 .botao-excluir:hover {
     background-color: rgba(165, 75, 69, 0.08);
 }
-
-/* CAMPO DE EDIÇÃO */
 
 #lista-tarefas li input[type="text"] {
     flex: 1;
@@ -328,8 +300,6 @@ h1 {
     border-color: #59644c;
 }
 
-/* CELULAR */
-
 @media (max-width: 600px) {
 
     body {
@@ -350,12 +320,12 @@ h1 {
 
     .adicionar-tarefa {
         flex-direction: column;
-
         padding: 7px;
     }
 
     #tarefa {
         width: 100%;
+        font-size: 16px;
     }
 
     #adicionar {
@@ -364,7 +334,6 @@ h1 {
 
     .folha {
         min-height: 500px;
-
         padding: 16px 10px 30px 42px;
     }
 
@@ -386,17 +355,13 @@ h1 {
 
     #lista-tarefas li button {
         padding: 5px 5px;
-
         font-size: 10px;
     }
 
     .botao-excluir {
         margin-left: 0;
     }
-
 }
-
-/* DISPOSITIVOS TOUCH */
 
 @media (hover: none) {
 
@@ -407,5 +372,4 @@ h1 {
     #lista-tarefas li button {
         opacity: 0.8;
     }
-
 }
