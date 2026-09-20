@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #d8d0bd;
+    color: #292c24;
+
+    display: flex;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding: 80px 20px 30px;
+}
+
+.container {
+    width: 600px;
+    max-width: 100%;
+}
+
+.folha {
+    width: 100%;
+    min-height: 500px;
+
+    margin-top: 25px;
+    padding: 16px 20px;
+
+    background-color: #fffef8;
+
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        #b7cddd 31px,
+        #b7cddd 32px
+    );
+
+    border: 2px solid #4d503c;
+    border-radius: 4px;
+
+    box-shadow: 8px 8px 0px #77715f;
+}
+
+h1 {
+    text-align: center;
+
+    color: #3f4735;
+
+    margin-bottom: 30px;
+
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.adicionar-tarefa {
+    display: flex;
+    gap: 10px;
+
+    padding-bottom: 20px;
+    border-bottom: 2px solid #aaa38f;
+}
+
+#tarefa {
+    flex: 1;
+    min-width: 0;
+
+    padding: 12px;
+
+    background-color: #fffaf0;
+
+    border: 2px solid #77715f;
+    border-radius: 4px;
+
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+
+    outline: none;
+}
+
+#tarefa:focus {
+    border-color: #3f4735;
+}
+
+#adicionar {
+    padding: 12px 18px;
+
+    border: 2px solid #303428;
+    border-radius: 4px;
+
+    background-color: #4d563d;
+    color: #ffffff;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#adicionar:hover {
+    background-color: #303728;
+}
+
+#lista-tarefas {
+    margin-top: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+#lista-tarefas li {
+    display: flex;
+    align-items: center;
+
+    min-height: 64px;
+    padding: 0 10px;
+
+    background-color: transparent;
+
+    border: 1px solid transparent;
+    border-radius: 3px;
+
+    transition: 0.2s;
+}
+
+#lista-tarefas li:hover {
+    border-color: #aaa38f;
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.check-tarefa {
+    width: 15px;
+    height: 15px;
+
+    flex: none;
+
+    cursor: pointer;
+
+    accent-color: #0047AB;
+}
+
+#lista-tarefas li span {
+    flex: 1;
+    min-width: 0;
+
+    margin-left: 28px;
+    margin-right: 15px;
+
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    font-size: 18px;
+
+    color: #0047AB;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+#lista-tarefas li span.tarefa-concluida {
+    text-decoration-line: line-through;
+    text-decoration-color: #d60000;
+    text-decoration-thickness: 2px;
+
+    opacity: 0.65;
+}
+
+#lista-tarefas li button {
+    padding: 5px 9px;
+
+    border: none;
+    border-radius: 3px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    flex: none;
+}
+
+.botao-editar {
+    background-color: #2878c7;
+    color: white;
+}
+
+.botao-editar:hover {
+    background-color: #1d5f9f;
+}
+
+.botao-salvar {
+    background-color: #2fa84f;
+    color: white;
+}
+
+.botao-salvar:hover {
+    background-color: #23843c;
+}
+
+.botao-excluir {
+    margin-left: 8px;
+
+    background-color: #d94343;
+    color: white;
+}
+
+.botao-excluir:hover {
+    background-color: #b72f2f;
+}
+
+#lista-tarefas li input[type="text"] {
+    flex: 1;
+    min-width: 0;
+
+    margin-right: 10px;
+    padding: 5px 8px;
+
+    border: 1px solid #77715f;
+    border-radius: 3px;
+
+    background-color: #ffffff;
+
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 30px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .adicionar-tarefa {
+        flex-direction: column;
+    }
+
+    #adicionar {
+        width: 100%;
+    }
+
+    .folha {
+        padding: 16px 10px;
+    }
+
+    #lista-tarefas li span {
+        margin-left: 15px;
+        margin-right: 10px;
+
+        font-size: 16px;
+    }
+
+    #lista-tarefas li button {
+        padding: 5px 7px;
+        font-size: 12px;
+    }
+
+}
