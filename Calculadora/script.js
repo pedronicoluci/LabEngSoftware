@@ -1,3 +1,4 @@
+
 let numeroAtual = "0";
 let numeroAnterior = null;
 let operacao = null;
@@ -11,15 +12,47 @@ function corrigirPrecisao(numero) {
     return Number(numero.toPrecision(12));
 }
 
-function atualizarVisor() {
-    const visor = document.getElementById("visor");
-    const tela = document.querySelector(".tela");
-    const status = document.querySelector(".status");
-    const erro = numeroAtual === "Erro";
-    visor.textContent = numeroAtual.replace(".", ",");
-    tela.classList.toggle("erro", erro);
-    status.textContent = erro ? "SYSTEM ERROR" : "SYSTEM READY";
-    ajustarFonteVisor();
+function executarOperacao(primeiroNumero, segundoNumero, op) {
+    let resultado;
+    switch (op) {
+        case "+":
+            resultado = primeiroNumero + segundoNumero;
+            break;
+        case "-":
+            resultado = primeiroNumero - segundoNumero;
+            break;
+        case "*":
+            resultado = primeiroNumero * segundoNumero;
+            break;
+        case "/":
+            if (segundoNumero === 0) {
+                return null;
+            }
+            resultado = primeiroNumero / segundoNumero;
+            break;
+        default:
+            return null;
+    }
+    return corrigirPrecisao(resultado);
+}
+
+function simboloOperacao(op) {
+    switch (op) {
+        case "+":
+            return "+";
+        case "-":
+            return "-";
+        case "*":
+            return "×";
+        case "/":
+            return "÷";
+        default:
+            return "";
+    }
+}
+
+function atualizarHistorico(texto) {
+    document.getElementById("historico").textContent = texto;
 }
 
 function ajustarFonteVisor() {
@@ -43,23 +76,15 @@ function ajustarFonteVisor() {
     medidor.remove();
 }
 
-function atualizarHistorico(texto) {
-    document.getElementById("historico").textContent = texto;
-}
-
-function simboloOperacao(op) {
-    switch (op) {
-        case "+":
-            return "+";
-        case "-":
-            return "-";
-        case "*":
-            return "×";
-        case "/":
-            return "÷";
-        default:
-            return "";
-    }
+function atualizarVisor() {
+    const visor = document.getElementById("visor");
+    const tela = document.querySelector(".tela");
+    const status = document.querySelector(".status");
+    const erro = numeroAtual === "Erro";
+    visor.textContent = numeroAtual.replace(".", ",");
+    tela.classList.toggle("erro", erro);
+    status.textContent = erro ? "SYSTEM ERROR" : "SYSTEM READY";
+    ajustarFonteVisor();
 }
 
 function adicionarNumero(numero) {
@@ -92,16 +117,6 @@ function adicionarDecimal() {
     atualizarVisor();
 }
 
-function limpar() {
-    numeroAtual = "0";
-    numeroAnterior = null;
-    operacao = null;
-    resultadoMostrado = false;
-    aguardandoNumero = false;
-    atualizarHistorico("");
-    atualizarVisor();
-}
-
 function inverterSinal() {
     if (numeroAtual === "Erro") {
         return;
@@ -124,30 +139,6 @@ function porcentagem() {
     resultadoMostrado = false;
     aguardandoNumero = false;
     atualizarVisor();
-}
-
-function executarOperacao(primeiroNumero, segundoNumero, op) {
-    let resultado;
-    switch (op) {
-        case "+":
-            resultado = primeiroNumero + segundoNumero;
-            break;
-        case "-":
-            resultado = primeiroNumero - segundoNumero;
-            break;
-        case "*":
-            resultado = primeiroNumero * segundoNumero;
-            break;
-        case "/":
-            if (segundoNumero === 0) {
-                return null;
-            }
-            resultado = primeiroNumero / segundoNumero;
-            break;
-        default:
-            return null;
-    }
-    return corrigirPrecisao(resultado);
 }
 
 function selecionarOperacao(op) {
@@ -200,6 +191,16 @@ function calcular() {
     operacao = null;
     aguardandoNumero = false;
     resultadoMostrado = true;
+    atualizarVisor();
+}
+
+function limpar() {
+    numeroAtual = "0";
+    numeroAnterior = null;
+    operacao = null;
+    resultadoMostrado = false;
+    aguardandoNumero = false;
+    atualizarHistorico("");
     atualizarVisor();
 }
 
