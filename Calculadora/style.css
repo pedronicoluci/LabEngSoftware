@@ -346,3 +346,14 @@ body {
     color: #ff4444 !important;
     text-shadow: 0 0 4px #ff0000, 0 0 10px rgba(255, 0, 0, 0.8) !important;
 }
+
+html {
+    min-height: 100%;
+    background-color: #020502;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #020502;
+}
