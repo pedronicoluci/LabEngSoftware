@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurassic Park - Population Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="contador">
+        <header class="cabecalho">
+            <div class="logo-jp">
+                <img src="jurassic-logo.png" alt="Jurassic Park">
+            </div>
+            <div class="titulos">
+                <h1>JURASSIC PARK</h1>
+                <p>INGEN // DINOSAUR POPULATION SYSTEM</p>
+            </div>
+            <section class="mini-mapa">
+                <span class="mini-mapa-titulo">ISLA NUBLAR</span>
+                <img src="isla-nublar.png" alt="Mapa de Isla Nublar">
+            </section>
+        </header>
+
+        <section class="total">
+            <h2>TOTAL DE DINOSSAUROS</h2>
+            <p id="total">0</p>
+        </section>
+
+        <section class="contadores">
+            <section class="categoria">
+                <h2>MACHOS</h2>
+                <p id="machos">0</p>
+                <div class="categoria-botoes">
+                    <button onclick="diminuir('machos')">−</button>
+                    <button onclick="aumentar('machos')">+</button>
+                </div>
+            </section>
+
+            <section class="categoria">
+                <h2>FÊMEAS</h2>
+                <p id="femeas">0</p>
+                <div class="categoria-botoes">
+                    <button onclick="diminuir('femeas')">−</button>
+                    <button onclick="aumentar('femeas')">+</button>
+                </div>
+            </section>
+        </section>
+
+        <button class="reiniciar" onclick="reiniciar()">REINICIAR CONTAGEM</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

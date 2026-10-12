@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: #101713;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    background: #101713;
+    color: #d5dfd5;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.contador {
+    width: 100%;
+    max-width: 580px;
+    padding: 16px;
+    background: #a2afa5;
+    border: 4px ridge #c3cec4;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.cabecalho {
+    display: grid;
+    grid-template-columns: 74px minmax(0, 1fr) 128px;
+    gap: 10px;
+    align-items: stretch;
+    margin-bottom: 10px;
+}
+
+.logo-jp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    background: #143e32;
+    border: 3px ridge #788d81;
+}
+
+.logo-jp img {
+    display: block;
+    width: 100%;
+    max-width: 65px;
+    height: auto;
+    object-fit: contain;
+}
+
+.titulos {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 10px;
+    background: #143e32;
+    border: 3px ridge #788d81;
+    text-align: center;
+}
+
+.titulos h1 {
+    color: #e4e7cd;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.titulos p {
+    margin-top: 6px;
+    color: #8dc9af;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+.mini-mapa {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background: #143e32;
+    border: 3px ridge #788d81;
+    overflow: hidden;
+}
+
+.mini-mapa-titulo {
+    display: block;
+    margin-bottom: 4px;
+    color: #e4e7cd;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.mini-mapa img {
+    display: block;
+    width: 100%;
+    height: 65px;
+    object-fit: contain;
+}
+
+.total {
+    margin-bottom: 10px;
+    padding: 14px;
+    background: #071a14;
+    border: 3px ridge #879b8d;
+    text-align: center;
+}
+
+.total h2 {
+    padding: 6px;
+    background: #b6c3b7;
+    color: #152a20;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.total p {
+    margin-top: 10px;
+    color: #77ef96;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 4rem;
+    text-shadow: 0 0 10px rgba(80, 255, 120, 0.35);
+}
+
+.contadores {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.categoria {
+    min-width: 0;
+    padding: 12px;
+    background: #0b2119;
+    border: 3px ridge #879b8d;
+    text-align: center;
+}
+
+.categoria h2 {
+    padding: 8px;
+    background: #315c4c;
+    color: #e4e7cd;
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.categoria p {
+    margin: 14px 0;
+    color: #77ef96;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 3rem;
+}
+
+.categoria-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+button {
+    padding: 8px;
+    background: #bec9be;
+    border: 3px outset #dce4dc;
+    color: #172a20;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.categoria-botoes button {
+    width: 46%;
+}
+
+button:hover {
+    background: #d8e3d7;
+}
+
+button:active {
+    border-style: inset;
+    background: #8fa393;
+}
+
+.reiniciar {
+    width: 100%;
+    padding: 11px;
+    background: #294638;
+    border: 3px outset #819589;
+    color: #e4e7cd;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.reiniciar:hover {
+    background: #3d6350;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 12px;
+    }
+
+    .contador {
+        padding: 12px;
+    }
+
+    .cabecalho {
+        grid-template-columns: 60px minmax(0, 1fr) 100px;
+        gap: 8px;
+    }
+
+    .logo-jp {
+        padding: 4px;
+    }
+
+    .logo-jp img {
+        max-width: 50px;
+    }
+
+    .titulos {
+        padding: 10px 6px;
+    }
+
+    .titulos h1 {
+        font-size: 1.65rem;
+        letter-spacing: 1px;
+    }
+
+    .titulos p {
+        font-size: 0.62rem;
+        letter-spacing: 0;
+    }
+
+    .mini-mapa-titulo {
+        font-size: 0.72rem;
+        letter-spacing: 0.5px;
+    }
+
+    .mini-mapa img {
+        height: 50px;
+    }
+
+    .total p {
+        font-size: 3.5rem;
+    }
+
+    .categoria h2 {
+        font-size: 1.15rem;
+    }
+
+    .categoria p {
+        font-size: 2.6rem;
+    }
+
+    button {
+        font-size: 1.7rem;
+    }
+
+    .reiniciar {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    body {
+        padding: 8px;
+    }
+
+    .contador {
+        padding: 8px;
+    }
+
+    .cabecalho {
+        grid-template-columns: 48px minmax(0, 1fr) 78px;
+        gap: 5px;
+    }
+
+    .logo-jp {
+        padding: 2px;
+    }
+
+    .logo-jp img {
+        max-width: 40px;
+    }
+
+    .titulos {
+        padding: 8px 4px;
+    }
+
+    .titulos h1 {
+        font-size: 1.35rem;
+        letter-spacing: 0;
+    }
+
+    .titulos p {
+        font-size: 0.55rem;
+    }
+
+    .mini-mapa {
+        padding: 3px;
+    }
+
+    .mini-mapa-titulo {
+        font-size: 0.6rem;
+        letter-spacing: 0;
+    }
+
+    .mini-mapa img {
+        height: 42px;
+    }
+
+    .total {
+        padding: 10px;
+    }
+
+    .total h2 {
+        font-size: 1rem;
+    }
+
+    .total p {
+        font-size: 3rem;
+    }
+
+    .contadores {
+        gap: 8px;
+    }
+
+    .categoria {
+        padding: 8px;
+    }
+
+    .categoria h2 {
+        font-size: 1rem;
+    }
+
+    .categoria p {
+        font-size: 2.3rem;
+    }
+
+    .categoria-botoes {
+        gap: 5px;
+    }
+
+    .categoria-botoes button {
+        width: 48%;
+        padding: 6px;
+    }
+
+    .reiniciar {
+        padding: 9px;
+        font-size: 0.9rem;
+    }
+}
