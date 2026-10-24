@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 280px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #171923;
+  color: #f8fafc;
+}
+
+button {
+  font-family: inherit;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.16), transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(6, 182, 212, 0.12), transparent 35%),
+    #171923;
+}
+
+.contador {
+  width: 100%;
+  max-width: 400px;
+  padding: 36px 28px;
+  text-align: center;
+  background: #232635;
+  border: 1px solid #373b50;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  animation: aparecer 0.6s ease both;
+}
+
+.contador h1 {
+  margin: 0 0 28px;
+  color: #f8fafc;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.numero {
+  color: #a78bfa;
+  font-size: 88px;
+  font-weight: 800;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  animation: destacar 0.25s ease;
+}
+
+.contador p {
+  margin: 8px 0 30px;
+  color: #a5adc2;
+  font-size: 15px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.botoes button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  border: none;
+  border-radius: 22px;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.botoes button:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.1);
+}
+
+.botoes button:active {
+  transform: scale(0.92);
+}
+
+.remover {
+  background: linear-gradient(135deg, #fb7185, #e11d48);
+  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.22);
+}
+
+.adicionar {
+  background: linear-gradient(135deg, #34d399, #059669);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.22);
+}
+
+.zerar {
+  margin-top: 28px;
+  padding: 12px 20px;
+  border: 1px solid #454a60;
+  border-radius: 12px;
+  background: #303447;
+  color: #d7dbea;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.zerar:hover {
+  background: #41465d;
+  transform: translateY(-2px);
+}
+
+.zerar:active {
+  transform: scale(0.97);
+}
+
+button:focus-visible {
+  outline: 3px solid #a78bfa;
+  outline-offset: 4px;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes destacar {
+  from {
+    transform: scale(0.92);
+    opacity: 0.65;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding: 16px;
+  }
+
+  .contador {
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+
+  .contador h1 {
+    font-size: 22px;
+  }
+
+  .numero {
+    font-size: 76px;
+  }
+
+  .botoes button {
+    width: 66px;
+    height: 66px;
+    border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
