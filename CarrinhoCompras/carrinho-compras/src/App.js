@@ -191,8 +191,16 @@ function App() {
     <div className="app">
       <header className="cabecalho">
         <div className="logo">
-          <h1>MotoParts <span>Garage</span></h1>
-          <p>Peças e acessórios para sua motocicleta</p>
+          <img
+            src="/imagens/ratfink.jfif"
+            alt="Mascote Rat Fink"
+            className="logo-imagem"
+          />
+
+          <div>
+            <h1>MotoParts <span>Garage</span></h1>
+            <p>Peças e acessórios para sua motocicleta</p>
+          </div>
         </div>
 
         <div className="resumo-cabecalho">
