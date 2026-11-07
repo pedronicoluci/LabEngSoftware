@@ -105,18 +105,23 @@ function ItemCarrinho({
     <div className="carrinho-item">
       <div className="carrinho-item-info">
         <h4>{item.nome}</h4>
-
-        <p>{formatarPreco(item.preco)}</p>
+        <p>{formatarPreco(item.preco)} cada</p>
       </div>
 
       <div className="controle-quantidade">
-        <button onClick={() => alterarQuantidade(item.id, -1)}>
+        <button
+          onClick={() => alterarQuantidade(item.id, -1)}
+          aria-label={`Diminuir quantidade de ${item.nome}`}
+        >
           -
         </button>
 
         <span>{item.quantidade}</span>
 
-        <button onClick={() => alterarQuantidade(item.id, 1)}>
+        <button
+          onClick={() => alterarQuantidade(item.id, 1)}
+          aria-label={`Aumentar quantidade de ${item.nome}`}
+        >
           +
         </button>
       </div>
@@ -139,41 +144,41 @@ function App() {
   const [carrinho, setCarrinho] = useState([]);
 
   function adicionarAoCarrinho(produto) {
-    const produtoExistente = carrinho.find(
-      (item) => item.id === produto.id
-    );
+    setCarrinho((carrinhoAtual) => {
+      const produtoExistente = carrinhoAtual.some(
+        (item) => item.id === produto.id
+      );
 
-    if (produtoExistente) {
-      setCarrinho(
-        carrinho.map((item) =>
+      if (produtoExistente) {
+        return carrinhoAtual.map((item) =>
           item.id === produto.id
             ? { ...item, quantidade: item.quantidade + 1 }
             : item
-        )
-      );
-    } else {
-      setCarrinho([
-        ...carrinho,
+        );
+      }
+
+      return [
+        ...carrinhoAtual,
         { ...produto, quantidade: 1 }
-      ]);
-    }
+      ];
+    });
   }
 
   function alterarQuantidade(id, variacao) {
-    const novoCarrinho = carrinho
-      .map((item) =>
-        item.id === id
-          ? { ...item, quantidade: item.quantidade + variacao }
-          : item
-      )
-      .filter((item) => item.quantidade > 0);
-
-    setCarrinho(novoCarrinho);
+    setCarrinho((carrinhoAtual) =>
+      carrinhoAtual
+        .map((item) =>
+          item.id === id
+            ? { ...item, quantidade: item.quantidade + variacao }
+            : item
+        )
+        .filter((item) => item.quantidade > 0)
+    );
   }
 
   function removerProduto(id) {
-    setCarrinho(
-      carrinho.filter((item) => item.id !== id)
+    setCarrinho((carrinhoAtual) =>
+      carrinhoAtual.filter((item) => item.id !== id)
     );
   }
 
@@ -197,8 +202,10 @@ function App() {
             className="logo-imagem"
           />
 
-          <div>
-            <h1>MotoParts <span>Garage</span></h1>
+          <div className="logo-texto">
+            <h1>
+              MotoParts <span>Garage</span>
+            </h1>
             <p>Peças e acessórios para sua motocicleta</p>
           </div>
         </div>
@@ -236,7 +243,9 @@ function App() {
           {carrinho.length === 0 ? (
             <div className="carrinho-vazio">
               <p>Seu carrinho está vazio.</p>
-              <span>Adicione produtos para começar sua compra.</span>
+              <span>
+                Adicione produtos para começar sua compra.
+              </span>
             </div>
           ) : (
             <>
@@ -268,7 +277,9 @@ function App() {
       </main>
 
       <footer className="rodape">
-        <p>© 2026 MotoParts Garage - Todos os direitos reservados.</p>
+        <p>
+          © 2026 MotoParts Garage - Todos os direitos reservados.
+        </p>
       </footer>
     </div>
   );
