@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+function Apresentação() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="pagina">
+      <div className="cartao">
+        <img
+          src="/faculdade.png"
+          alt="Prédio de uma faculdade"
+          className="imagem-faculdade"
+        />
+
+        <h1>Pedro Nicoluci</h1>
+
+        <h2>Curso: Análise e Desenvolvimento de Sistemas</h2>
+
+        <p>Seja bem-vindo à nossa faculdade!</p>
+      </div>
+    </main>
   );
 }
 
-export default App;
+export default Apresentação;

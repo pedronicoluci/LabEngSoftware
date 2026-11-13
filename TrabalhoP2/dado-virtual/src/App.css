@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+.mesa {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at center, #1b6445 0%, #10432f 65%, #092d20 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  font-family: Georgia, serif;
+}
+
+.cartao {
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+  padding: 40px 25px;
+  border: 3px solid #b99a55;
+  outline: 1px solid #b99a55;
+  outline-offset: 6px;
+  border-radius: 12px;
+  background: rgba(5, 35, 24, 0.45);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.subtitulo {
+  color: #d6b96e;
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+
+h1 {
+  color: #f4e8c8;
+  font-size: 34px;
+  letter-spacing: 3px;
+  margin: 15px 0;
+}
+
+.descricao {
+  color: #d6d0b9;
+  font-size: 16px;
+}
+
+.area-dado {
+  display: flex;
+  justify-content: center;
+  margin: 35px 0;
+}
+
+.dado {
+  width: 125px;
+  height: 125px;
+  background: linear-gradient(145deg, #fffdf5, #e5ddca);
+  border: 2px solid #c5bda9;
+  border-radius: 20px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  box-shadow:
+    0 8px 0 #a79e8a,
+    0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+.ponto {
+  width: 19px;
+  height: 19px;
+  background: #252525;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+
+.girando {
+  animation: rolar 0.7s ease-in-out;
+}
+
+@keyframes rolar {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  30% {
+    transform: rotate(100deg) scale(0.8);
+  }
+
+  60% {
+    transform: rotate(240deg) scale(1.1);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.botao-jogar {
+  background: linear-gradient(180deg, #d8bd77, #a98742);
+  color: #182d20;
+  border: 1px solid #f0d99b;
+  padding: 15px 35px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botao-jogar:hover {
+  background: #f0d99b;
+  transform: translateY(-2px);
+}
+
+.botao-jogar:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.contador {
+  color: #e5d6ad;
+  margin-top: 30px;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.botao-reset {
+  background: transparent;
+  border: 1px solid #b99a55;
+  color: #e5d6ad;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.botao-reset:hover {
+  background: rgba(185, 154, 85, 0.2);
+}
+
+.rodape {
+  color: #b99a55;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-top: 35px;
+}
+
+
+.dado {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.dado:not(.girando) {
+  box-shadow:
+    0 8px 0 #a79e8a,
+    0 15px 25px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(230, 190, 90, 0.55);
+}
+
+.girando {
+  animation: rolar 0.7s ease-in-out;
+}
+
+@keyframes rolar {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  30% {
+    transform: rotate(100deg) scale(0.8);
+  }
+
+  60% {
+    transform: rotate(240deg) scale(1.1);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
